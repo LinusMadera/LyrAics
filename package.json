@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LinusMadera/LyrAics/issues"
   },
-  "homepage": "https://github.com/LinusMadera/LyrAics#readme"
+  "homepage": "https://github.com/LinusMadera/LyrAics#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
 }
