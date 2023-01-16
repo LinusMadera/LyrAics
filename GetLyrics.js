@@ -1,9 +1,9 @@
-import config from "config.js";
+require('dotenv').config();
 
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': config.XRapidAPIKey,
+		'X-RapidAPI-Key': process.env.RAPID_API_KEY,
 		'X-RapidAPI-Host': 'sridurgayadav-chart-lyrics-v1.p.rapidapi.com'
 	}
 };

@@ -61,11 +61,14 @@ Do you know what you're doing?
 You're trying to hold yourself together
 As if your skin weren't strong enough to contain you`
 
-function LineSplit(lyrics){
-    return lyrics.split("\n");
+let splitIntoLines = lyrics => lyrics.split("\n");
+
+let removeRepeatingLines = lyrics => {
+    return [...new Set(lyrics.split("\n"))];
 }
 
-let indexSong= (lyrics,nonRepeatLyrics) => {
+let indexLyrics = lyrics => {
+    let nonRepeatLyrics = removeRepeatingLines(lyrics);
     let indexArray = []
     for (i of lyrics){
         let indexOfCurrentLine= nonRepeatLyrics.indexOf(i);
@@ -84,11 +87,10 @@ let rebuildSong = (noRepeatsStrings,indexedSong) => {
     return song
 }
 
-let filteredString = [...new Set(LineSplit(baseLyrics))];
-let stringSet = new Set(LineSplit(baseLyrics));
-let indexedSong = indexSong(LineSplit(baseLyrics),filteredString);
+let lyricArray = splitIntoLines(baseLyrics);
+let lyricNoRepeatedLine = removeRepeatingLines(baseLyrics);
+let fullIndexedSong = indexLyrics(lyricArray);
 
-console.log(filteredString);
-console.log(stringSet);
-console.log(indexedSong);
-console.log(rebuildSong(filteredString,indexedSong));
+
+console.log(indexLyrics(baseLyrics));
+console.log(rebuildSong(lyricArray))

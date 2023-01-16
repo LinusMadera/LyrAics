@@ -18,5 +18,8 @@
   "homepage": "https://github.com/LinusMadera/LyrAics#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
